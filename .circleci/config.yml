@@ -18,9 +18,9 @@ jobs:
           command: |
             echo 'Hello World 2!'
             echo 'This is the delivery pipeline 2'
-    workflow:
-      version: 2
-      test1_test2:
-        jobs:
-          - test1
-          - test2
+workflow:
+  version: 2
+  test1_test2:
+    jobs:
+      - test1
+      - test2
