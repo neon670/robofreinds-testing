@@ -1,6 +1,6 @@
 version: 2.0
 jobs:
-  build:
+  test1:
     docker:
       - image: alpine:3.7
     steps:
@@ -9,3 +9,18 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+  test2:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World 2!'
+            echo 'This is the delivery pipeline 2'
+    workflow:
+      version: 2
+      test1_test2:
+        jobs:
+          - test1
+          - test2
