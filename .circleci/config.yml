@@ -1,13 +1,14 @@
 version: 2.0
 jobs:
-  test1:
+  build:
     docker:
       - image: alpine:3.7
     steps:
+      - checkout:
       - run:
           name: The First Step
           command: |
-            echo 'Hello World!'
+            echo 'npm installing'
             echo 'This is the delivery pipeline'
   test2:
     docker:
